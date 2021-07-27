@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en">
+<html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -16,27 +16,33 @@
 </header>
 
 <main>
-  <div class="row align-spaced flex-container ">
-    <div class="columns large-6">
-      <h3><button class="button" data-open="exampleModal1"> Preferences</button></h3>
-    </div>
-    <div class="columns large-6">
-      <h3><button class="button" data-open="exampleModal1"> Saved/Favorites</button></h3>
-    </div>
+
+  <div class="reveal" id="exampleModal1" data-reveal>
+    <h1>Awesome. I Have It.</h1>
+    <p class="lead">Your couch. It is mine.</p>
+    <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
 
-  <button class="button large" href="#">DRINK!!</button>
-  <div class="row align-spaced flex-container small-up-1 medium-up-2" height=80%>
-    <div class="column">
-    
-    </div>
-    <div class="column">
+  <p><button class="button" data-open="exampleModal1">Click me for a modal</button></p>
 
-    </div>
-  </div>
+
+
+
+
+
+
+
+
 </main>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/5.2.10/what-input.min.js" integrity="sha512-4snZhaL41OLVJbrysFHLFItNF9pb4zzm/X6ag4srEFALI0Hns+FVZg22G/nofqTGliAyaeWxoTjTZpmbU3enXQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
-
+<script>
+  $(document).foundation()
+</script>
 </body>
 </html>
