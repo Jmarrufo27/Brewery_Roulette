@@ -17,36 +17,40 @@
 </header>
 
 <main>
+<div class="bgcover">
 
-  <div class="reveal" id="exampleModal1" data-reveal>
-    <form>
-      <div class="grid-container">
-        <div class="grid-x grid-padding-x">
-          <div class="medium-6 cell">
-            <label>Enter Zip Code
-              <input type="text" placeholder="Zip Code">
-            </label>
-          </div>
-          <div class="medium-6 cell">
-            <label>Enter City     <!-- we're gonna have to use toLowerCase and probably Trim-->
-              <input type="text" placeholder="City">
-            </label>
-          </div>
+</div>
+<div class="reveal" id="exampleModal1" data-reveal>
+  <form>
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="medium-6 cell">
+          <label>Enter Zip Code
+            <input type="text" placeholder="Zip Code">
+          </label>
+        </div>
+        <div class="medium-6 cell">
+          <label>Enter City     <!-- we're gonna have to use toLowerCase and probably Trim-->
+            <input type="text" placeholder="City">
+          </label>
         </div>
       </div>
-    </form>
-    <label>Select Brewery Type
-      <select>    <!--these values will be fed to the api request-->
-        <option value="Micro">Micro</option>
-        <option value="Nano">Nano</option>
-        <option value="Regional">Regional</option>
-        <option value="BrewPub">BrewPub</option>
-      </select>
-            <button class=".submit button">Submit</button>
-    </label>
-  </div>
-
+    </div>
+  </form>
+  <label>Select Brewery Type
+    <select>    <!--these values will be fed to the api request-->
+      <option value="Micro">Micro</option>
+      <option value="Nano">Nano</option>
+      <option value="Regional">Regional</option>
+      <option value="BrewPub">BrewPub</option>
+    </select>
+        <button class=".submit button">Submit</button>
+  </label>
+</div>
+<div class="grid-x grid-padding-x align-center" z-index=1>
   <p><button class="button" data-open="exampleModal1">Get Started</button></p>
+</div>
+
 
 </main>
 

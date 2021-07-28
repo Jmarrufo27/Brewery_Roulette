@@ -1,0 +1,13 @@
+body {
+  z-index: 1;
+}
+.bgcover {
+  position: relative;
+  opacity: .5;
+  height: calc(100vh);
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(https://stonearchbrewpub.com/wp-content/uploads/stonearchphotos-50-768x512.jpg);
+}
