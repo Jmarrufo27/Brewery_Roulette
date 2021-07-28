@@ -7,18 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bar Roulette</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="assets/style.css">
   </head>
 
 <body class="grid-y grid-frame">
 
 <header>
   <h1 class='text-center' bold>Bar Roulette</h1>
+  <!--Saved bars button-->
+
+<div id="saveBtn" class="grid-x grid-padding-x align-right">
+  
+
+  <p><button class="button" data-open="exampleModal2">Saved</button></p>
+
+  
+</div>
 </header>
 
 <main>
-<div class="bgcover">
-
+<div class=“bgcover>
+  
 </div>
 <div class="reveal" id="exampleModal1" data-reveal>
   <form>
@@ -35,21 +44,44 @@
           </label>
         </div>
       </div>
-    </div>
-  </form>
-  <label>Select Brewery Type
-    <select>    <!--these values will be fed to the api request-->
-      <option value="Micro">Micro</option>
-      <option value="Nano">Nano</option>
-      <option value="Regional">Regional</option>
-      <option value="BrewPub">BrewPub</option>
-    </select>
-        <button class=".submit button">Submit</button>
-  </label>
+    </form>
+    <label>Select Brewery Type
+      <select>    <!--these values will be fed to the api request-->
+        <option value="Micro">Micro</option>
+        <option value="Nano">Nano</option>
+        <option value="Regional">Regional</option>
+        <option value="BrewPub">BrewPub</option>
+      </select>
+            <button id="submitBtn" class=".submit button">Submit</button>
+    </label>
+  </div>
+
+  <!-- Empty modal for saved local storager (saved bars etc.)-->
+
+  <div class="reveal" id="exampleModal2" data-reveal>
+    <h1>Your Saved Bars!</h1>
+    
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+
+<!--Get Started Button-->
+<div class="grid-x grid-padding-x align-center">
+  
+
+  <p><button class="button" data-open="exampleModal1" style=" z-index: 99;">Get Started</button></p>
+
+  
 </div>
-<div class="grid-x grid-padding-x align-center" z-index=1>
-  <p><button class="button" data-open="exampleModal1">Get Started</button></p>
-</div>
+
+
+
+
+
+
+
 
 
 </main>
