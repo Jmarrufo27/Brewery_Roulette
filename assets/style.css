@@ -29,3 +29,8 @@ body {
 #saveBtn {
   padding-right: 5rem;
 }
+.intro {
+    border: solid rgb(206, 173, 27) 3px;
+    box-shadow: 3px 3px rgb(163, 134, 3);
+    background: grey;
+}
