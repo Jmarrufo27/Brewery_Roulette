@@ -1,4 +1,24 @@
-#submitBtn { 
+body {
+  z-index: 999;
+  background-image: url(https://stonearchbrewpub.com/wp-content/uploads/stonearchphotos-50-768x512.jpg);
+  position: relative;
+  background-opacity: 1;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* .bgcover {
+  position: relative;
+  opacity: .5;
+  height: calc(100vh);
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; */
+  
+
+  #submitBtn { 
   width:100px; 
   margin: -20px -50px; 
   position:relative;
