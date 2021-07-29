@@ -1,33 +1,41 @@
-ar key = "011270d41f698434cf9cd446d6dc399e";
 
+var submitButton = document.getElementById('submitBtn')
+// var location = document.getElementsByClassName('weather');
+var postalInput = document.getElementById('zipCode')
+var citySearchInput = document.getElementById('city')
 
-
-
-
-var loaction = document.getElementsByClassName('weather');
-
-function getApi(lat,lon) {
- var requestUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=' +lat+'&lon=' +lon+'&exclude=hourly,minutely,alerts&appid=' + key;   
+function getApi(citySearch) {
+ var requestUrl = 'https://api.openbrewerydb.org/breweries/search?by_postal='+ postal+'&by_city='+ citySearch;   
   fetch(requestUrl)
     .then(function (response) {
-      console.log(location);
+      console.log(response);
       
       return response.json();
   }) .then( function (data){
     console.log(data);
+}) .catch(function (error){
+    console.log(error)
 })
 }
 
-function searchCity (cityName) {
-  var ladLongCall = "https://api.openweathermap.org/data/2.5/weather?q="+ cityName+"&appid=" + key;  
-  fetch(ladLongCall)
-  .then(function (response) {
-      console.log(response);
+// function searchCity (cityName) {
+//   var ladLongCall = "https://api.openweathermap.org/data/2.5/weather?q="+ cityName+"&appid=" + key;  
+//   fetch(ladLongCall)
+//   .then(function (response) {
+//       console.log(response);
 
-      return response.json();
-  }) .then( function (data){
-      console.log(data);
-      getApi (data.coord.lat, data.coord.lon)
-  })
+//       return response.json();
+//   }) .then( function (data){
+//       console.log(data);
+//       getApi (data.coord.lat, data.coord.lon)
+//   })
+// }
+// searchCity("San Francisco")
+
+function handleButton (event) {
+    event.preventDefault()
+    getApi(postalInput.value, citySearchInput.value)
+
 }
-searchCity("San Francisco")
+
+submitButton.addEventListener('click', handleButton)
