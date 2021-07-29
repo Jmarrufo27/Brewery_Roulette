@@ -27,7 +27,8 @@ body {
 
 header {
   padding-top: 10px;
-  background-image: linear-gradient(to right, #663300,#cc9900 ) ;
+  background-image: linear-gradient(to right,  #000000, #7c3e00) ;
+  color: white;
 
 }
 
@@ -52,4 +53,8 @@ header {
 
 .button {
   border-radius: 50px;
+}
+
+#saveBtn {
+  margin-top: 1rem;
 }
