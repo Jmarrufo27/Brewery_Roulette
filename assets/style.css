@@ -2,7 +2,6 @@ body {
   z-index: 999;
   background-image: url(https://stonearchbrewpub.com/wp-content/uploads/stonearchphotos-50-768x512.jpg);
   position: relative;
-  background-opacity: 1;
   min-height: 100vh;
   background-size: cover;
   background-position: center;
@@ -26,6 +25,13 @@ body {
   left:50%;
 }
 
+header {
+  padding-top: 10px;
+  background-image: linear-gradient(to right,  #000000, #7c3e00) ;
+  color: white;
+
+}
+
 #saveBtn {
   padding-right: 5rem;
 }
@@ -33,4 +39,22 @@ body {
     border: solid rgb(206, 173, 27) 3px;
     box-shadow: 3px 3px rgb(163, 134, 3);
     background: grey;
+}
+
+#map {
+      position: absolute;
+      top: 50%;
+      bottom: 0;
+      width: 35%;
+      height: 40vh;
+      left: 59%;
+      border: solid black 5px
+    }
+
+.button {
+  border-radius: 50px;
+}
+
+#saveBtn {
+  margin-top: 1rem;
 }
