@@ -43,26 +43,21 @@ header {
 }
 
 #map {
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   bottom: 0;
-  width: 35%;
+
+  left: 59%; */
+  border: solid black 5px; 
+  width: 100%;
   height: 40vh;
-  left: 59%;
-  border: solid black 5px
 }
 
 #displayBarInfo {
-  position: absolute;
-  top: 50%;
-  bottom: 0;
-  width: 35%;
-  justify-content: center;
   height: 40vh;
-  right: 59%;
-  background: whitesmoke;
-  opacity: 0.5;
+  background: rgba(255, 254, 254, 0.5);
   border: solid black 5px
+  
 
 }
 
@@ -74,4 +69,25 @@ header {
 
 #saveBtn {
   margin-top: 1rem;
+}
+
+.container {
+  width: 60%;
+  max-width: 1500px;
+  margin: 0 auto;
+  margin-top: 5rem;
+}
+
+#getStarted {
+  margin-top: 2rem;
+}
+
+#rouletteBtn {
+  background-color: red;
+  color: #000000;
+  font-weight: bold;
+  border-radius: 100%;
+  height: 200px;
+  width: 200px;
+  border: solid black 5px; 
 }
