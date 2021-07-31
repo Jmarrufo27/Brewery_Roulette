@@ -1,4 +1,4 @@
- TriBranch
+//  TriBranch
 // TO MAKE THE MAP APPEAR YOU MUST
 // ADD YOUR ACCESS TOKEN FROM
 // https://account.mapbox.com
@@ -11,15 +11,18 @@
 //   center: [-74.5, 40], // starting position [lng, lat]
 //   zoom: 9 // starting zoom
 // // });
-=======
+// 
+
+var mapKey = 'pk.eyJ1IjoiZmxvdzNyIiwiYSI6ImNrcnJlZzY3azEyY2wybm8xdjM4ZzZ1ZHQifQ.a3bwXqM3S8c6JRvLcXvm2w'
 
 var submitButton = document.getElementById('submitBtn')
 // var location = document.getElementsByClassName('weather');
 var postalInput = document.getElementById('zipCode')
 var citySearchInput = document.getElementById('city')
+var breweryType = document.getElementById('type');
 
-function getApi(citySearch) {
- var requestUrl = 'https://api.openbrewerydb.org/breweries/search?by_postal='+ postal+'&by_city='+ citySearch;   
+function getApi(citySearch, type) {
+ var requestUrl = 'https://api.openbrewerydb.org/breweries?by_city=' + citySearch+'&by_type=' +type;   
   fetch(requestUrl)
     .then(function (response) {
       console.log(response);
@@ -32,8 +35,8 @@ function getApi(citySearch) {
 })
 }
 
-// function searchCity (cityName) {
-//   var ladLongCall = "https://api.openweathermap.org/data/2.5/weather?q="+ cityName+"&appid=" + key;  
+// function showMap (location) {
+//   var mapURL = "https://api.openweathermap.org/data/2.5/weather?q="+ cityName+"&appid=" + key;  
 //   fetch(ladLongCall)
 //   .then(function (response) {
 //       console.log(response);
@@ -48,9 +51,9 @@ function getApi(citySearch) {
 
 function handleButton (event) {
     event.preventDefault()
-    getApi(postalInput.value, citySearchInput.value)
+    getApi(citySearchInput.value, breweryType.value)
 
 }
 
 submitButton.addEventListener('click', handleButton)
- main
+
