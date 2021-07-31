@@ -36,7 +36,7 @@ function getApi(citySearch, type) {
 }
 
 // function showMap (location) {
-//   var ladLongCall = "https://api.openweathermap.org/data/2.5/weather?q="+ cityName+"&appid=" + key;  
+//   var mapURL = "https://api.openweathermap.org/data/2.5/weather?q="+ cityName+"&appid=" + key;  
 //   fetch(ladLongCall)
 //   .then(function (response) {
 //       console.log(response);
