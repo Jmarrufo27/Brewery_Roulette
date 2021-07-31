@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
@@ -43,20 +42,20 @@
   <form>
     <div class="grid-container">
       <div class="grid-x grid-padding-x">
-        <div class="medium-6 cell">
+        <!-- <div class="medium-6 cell">
           <label>Enter Zip Code
-            <input type="text" placeholder="Zip Code">
+            <input id="zipCode" type="text" placeholder="Zip Code">
           </label>
-        </div>
-        <div class="medium-6 cell">
+        </div> -->
+        <div class="medium-12 cell">
           <label>Enter City     <!-- we're gonna have to use toLowerCase and probably Trim-->
-            <input type="text" placeholder="City">
+            <input id="city" type="text" placeholder="City">
           </label>
         </div>
       </div>
     </form>
     <label>Select Brewery Type
-      <select>    <!--these values will be fed to the api request-->
+      <select id="type">    <!--these values will be fed to the api request-->
         <option value="Micro">Micro</option>
         <option value="Nano">Nano</option>
         <option value="Regional">Regional</option>
@@ -80,6 +79,8 @@
   </div>  
 </div>
 
+<div></div>
+
 <div class="grid-x grid-padding-x align-right"></div>
 <!-- This is where Map displayed -->
 <div class="grid-x grid-padding-x align-right"></div>
@@ -97,6 +98,7 @@
 <script>
   $(document).foundation()
 </script>
+ TriBranch
 <!-- Javascript for the map -->
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
 <script>
