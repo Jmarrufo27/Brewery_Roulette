@@ -17,7 +17,7 @@ body {
   background-repeat: no-repeat; */
   
 
-  #submitBtn { 
+#submitBtn { 
   width:100px; 
   margin: -20px -50px; 
   position:relative;
@@ -35,10 +35,11 @@ header {
 #saveBtn {
   padding-right: 5rem;
 }
-.intro {
-    border: solid rgb(206, 173, 27) 3px;
-    box-shadow: 3px 3px rgb(163, 134, 3);
-    background: grey;
+
+.intro{
+  border: solid rgb(206, 173, 27) 3px;
+  box-shadow: 3px 3px rgb(163, 134, 3);
+  background: grey;
 }
 
 #map {
@@ -56,10 +57,15 @@ header {
   top: 50%;
   bottom: 0;
   width: 35%;
+  justify-content: center;
   height: 40vh;
   right: 59%;
+  background: whitesmoke;
+  opacity: 0.5;
   border: solid black 5px
+
 }
+
 .button {
   border-radius: 50px;
 }

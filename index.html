@@ -17,7 +17,9 @@
 <header>
   <h1 class='text-center' bold>Bar Roulette</h1>
   <!--Saved bars button-->
-
+  <div id="saveBtn" class="grid-x grid-padding-x align-right">
+    <p><button class="button" data-open="exampleModal2">Saved</button></p>
+  </div>
 
 </header>
 
@@ -29,15 +31,12 @@
   </div>
 </div>
 
-<div id="saveBtn" class="grid-x grid-padding-x align-right">
-  <p><button class="button" data-open="exampleModal2">Saved</button></p>
-</div>
 
 <!-- Get Started Button -->
 <div class="grid-x grid-padding-x align-center">
   <button class="button large" data-open="exampleModal1">Get Started</button>
 </div>
-
+<!-- Here is the modal that will appear after you click Get Started -->
 <div class="reveal" id="exampleModal1" data-reveal>
   <form>
     <div class="grid-container">
@@ -79,27 +78,27 @@
   </div>  
 </div>
 
+<!--Trying to make this a box to align the button and the two displays-->
 <div class="grid-x grid-padding-x">
-  
-  <div class="grid-x grid-padding-x align-left cell medium-5" id="displayBarInfo">
-    
-    <h2>Your Fate Lies Here</h2>
- 
+ <!--Display for bar-->
+  <div class= "grid-x grid-padding-x align-left" id="displayBarInfo">
+    <div>
+      <h2>Your Fate Lies Here</h2>
+    </div>
   </div>
-  
-  <div class="grid-x grid-padding-x align-right cell medium-2">
-    
+ <!--Button-->
+  <div class="align-center cell-medium-2">
     <button id="rouletteBtn" class=".submit button">Roulette Button</button>
-  
   </div>
-  
-  <!-- This is where Map displayed --> 
-  <div class="grid-x grid-padding-x align-right cell medium-5">
-    
+
+ <!--Map-->
+  <div class="grid-x grid-padding-x align-right">
     <div id="map" class=""></div>
- 
   </div>
 </div>
+
+
+  
 </main>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -108,6 +107,7 @@
 <script>
   $(document).foundation()
 </script>
+ 
 <!-- Javascript for the map -->
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
 <script>
