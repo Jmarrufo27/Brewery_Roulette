@@ -56,4 +56,6 @@ function handleButton (event) {
 }
 
 submitButton.addEventListener('click', handleButton)
+//Retrieve Lon and Lat from API and display it on the map as Markers
 
+//
