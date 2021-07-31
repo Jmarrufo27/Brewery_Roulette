@@ -11,15 +11,17 @@
 //   center: [-74.5, 40], // starting position [lng, lat]
 //   zoom: 9 // starting zoom
 // // });
-=======
+// 
+
+var mapKey = 'pk.eyJ1IjoiZmxvdzNyIiwiYSI6ImNrcnJlZzY3azEyY2wybm8xdjM4ZzZ1ZHQifQ.a3bwXqM3S8c6JRvLcXvm2w'
 
 var submitButton = document.getElementById('submitBtn')
 // var location = document.getElementsByClassName('weather');
 var postalInput = document.getElementById('zipCode')
 var citySearchInput = document.getElementById('city')
 
-function getApi(postal, citySearch) {
- var requestUrl = 'https://api.openbrewerydb.org/breweries/search?by_postal='+ postal+'&by_city='+ citySearch;   
+function getApi(postal) {
+ var requestUrl = 'https://api.openbrewerydb.org/breweries/search?by_postal='+ postal;   
   fetch(requestUrl)
     .then(function (response) {
       console.log(response);
@@ -32,7 +34,7 @@ function getApi(postal, citySearch) {
 })
 }
 
-// function searchCity (cityName) {
+// function showMap (location) {
 //   var ladLongCall = "https://api.openweathermap.org/data/2.5/weather?q="+ cityName+"&appid=" + key;  
 //   fetch(ladLongCall)
 //   .then(function (response) {
