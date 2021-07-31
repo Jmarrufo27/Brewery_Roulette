@@ -40,6 +40,7 @@ header {
   border: solid rgb(206, 173, 27) 3px;
   box-shadow: 3px 3px rgb(163, 134, 3);
   background: grey;
+  margin-bottom: 2rem;
 }
 
 #map {
@@ -69,6 +70,7 @@ header {
 
 #saveBtn {
   margin-top: 1rem;
+  font-size: 2rem;
 }
 
 .container {
