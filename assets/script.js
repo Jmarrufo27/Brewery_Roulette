@@ -4,7 +4,7 @@ var submitButton = document.getElementById('submitBtn')
 var postalInput = document.getElementById('zipCode')
 var citySearchInput = document.getElementById('city')
 
-function getApi(citySearch) {
+function getApi(postal, citySearch) {
  var requestUrl = 'https://api.openbrewerydb.org/breweries/search?by_postal='+ postal+'&by_city='+ citySearch;   
   fetch(requestUrl)
     .then(function (response) {
