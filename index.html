@@ -16,25 +16,27 @@
 
 <header>
   <h1 class='text-center' bold>Bar Roulette</h1>
+  <div class="grid-x grid-padding-x align-center">
+    <div class="intro">
+      <article class="text-center text-wrap">Your girl can’t decide where to drink tonight? Sick of the same ole places? Want to explore breweries near your area and try out a new IPA? Hit the Get started button and fill out the information and we'll help you out</article>
+    </div>
+  </div>
   <!--Saved bars button-->
   <div id="saveBtn" class="grid-x grid-padding-x align-right">
     <p><button class="button" data-open="exampleModal2">Saved</button></p>
   </div>
 
+
+  
 </header>
 
 <main>
 
-<div class="grid-x grid-padding-x align-center">
-  <div class="intro">
-    <article class="text-center text-wrap">Your girl can’t decide where to drink tonight? Sick of the same ole places? Want to explore breweries near your area and try out a new IPA? Hit the Get started button and fill out the information and we'll help you out</article>
-  </div>
-</div>
 
 
 <!-- Get Started Button -->
-<div class="grid-x grid-padding-x align-center">
-  <button class="button large" data-open="exampleModal1">Get Started</button>
+<div id="getStarted" class="grid-x grid-padding-x align-center">
+  <button id="getStarted" class="button large" data-open="exampleModal1">Get Started</button>
 </div>
 <!-- Here is the modal that will appear after you click Get Started -->
 <div class="reveal" id="exampleModal1" data-reveal>
@@ -79,20 +81,20 @@
 </div>
 
 <!--Trying to make this a box to align the button and the two displays-->
-<div class="grid-x grid-padding-x">
+<div class="grid-x grid-padding-x container">
  <!--Display for bar-->
-  <div class= "grid-x grid-padding-x align-left" id="displayBarInfo">
+  <div id="displayBarInfo" class= "cell medium-4 text-center align-self-middle" >
     <div>
       <h2>Your Fate Lies Here</h2>
     </div>
   </div>
  <!--Button-->
-  <div class="align-center cell-medium-2">
+  <div  class="cell medium-4 text-center align-self-middle">
     <button id="rouletteBtn" class=".submit button">Roulette Button</button>
   </div>
 
  <!--Map-->
-  <div class="grid-x grid-padding-x align-right">
+  <div class="cell medium-4 text-center align-self-middle">
     <div id="map" class=""></div>
   </div>
 </div>
