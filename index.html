@@ -83,7 +83,11 @@
 <div class="grid-x grid-padding-x align-right"></div>
 <!-- This is where Map displayed -->
 <div class="grid-x grid-padding-x align-right"></div>
-  <div id="map" class=""></div>
+  <div id="map" class="">
+    $ curl -g
+    "https://api.mapbox.com/styles/v1/mapbox/light-v10/static/pin-s-l+000(-87.0186,32.4055)/-87.0186,32.4055,14/500x300?access_token=pk.eyJ1IjoidHJpaWloYXVzIiwiYSI6ImNrcm9ja2s5aTZmM3AydnBkaXVwank3cHAifQ.7lG7dllcNDPKoe99U3hBDg"
+    --output example-mapbox-static-overlay-marker.png
+  </div>
 
 </main>
 
@@ -103,7 +107,7 @@
   var map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/mapbox/streets-v11', // style URL
-    center: [-74.5, 40], // starting position [lng, lat]
+    center: [-118, 33.8], // starting position [lng, lat]
     zoom: 9 // starting zoom
   });
 </script>
