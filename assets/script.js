@@ -1,4 +1,4 @@
- TriBranch
+//  TriBranch
 // TO MAKE THE MAP APPEAR YOU MUST
 // ADD YOUR ACCESS TOKEN FROM
 // https://account.mapbox.com
@@ -19,9 +19,10 @@ var submitButton = document.getElementById('submitBtn')
 // var location = document.getElementsByClassName('weather');
 var postalInput = document.getElementById('zipCode')
 var citySearchInput = document.getElementById('city')
+var breweryType = document.getElementById('type');
 
-function getApi(postal) {
- var requestUrl = 'https://api.openbrewerydb.org/breweries/search?by_postal='+ postal;   
+function getApi(citySearch, type) {
+ var requestUrl = 'https://api.openbrewerydb.org/breweries?by_city=' + citySearch+'&by_type=' +type;   
   fetch(requestUrl)
     .then(function (response) {
       console.log(response);
@@ -50,9 +51,9 @@ function getApi(postal) {
 
 function handleButton (event) {
     event.preventDefault()
-    getApi(postalInput.value, citySearchInput.value)
+    getApi(citySearchInput.value, breweryType.value)
 
 }
 
 submitButton.addEventListener('click', handleButton)
- main
+
