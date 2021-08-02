@@ -4,6 +4,8 @@ var submitButton = document.getElementById('submitBtn')
 var citySearchInput = document.getElementById('city')
 var breweryType = document.getElementById('type');
 var rouletteBtn = document.getElementById('rouletteBtn');
+// created valid bars array that will store all the bars with info: street,website,latitude & longitude
+var validBars = []
 
 //Function Generate Map with variable "center" that will be the longitude and latitiude coordinates, [lng, lat]
 function generateMap(center){
@@ -29,8 +31,6 @@ function getApi(citySearch, type) {
   }) .then( function (data){
     console.log(data);
 
-// created valid bars array that will store all the bars with info: street,website,latitude & longitude
-    var validBars = []
 // this forloop goes through the data and pushes the validbars based on the conditions to the array validBars
     for (let i = 0; i < data.length; i++) {
         const element = data[i];
@@ -58,6 +58,7 @@ function getApi(citySearch, type) {
 function handleButton (event) {
     event.preventDefault()
     getApi(citySearchInput.value, breweryType.value)
+    
 
 }
 
@@ -65,13 +66,14 @@ function randomValidBarPickAndDisplay() {
 
     var container = document.getElementById('barInfoDisplay')
     var randomBar = validBars[Math.floor(Math.random() * validBars.length)]
-    var barName = document.createElement(h3);
-    var barStreet = document.createElement(h3);
-    var barWebsite = document.createElement(a);
+    var barName = document.createElement('h5');
+    var barStreet = document.createElement('h5');
+    var barWebsite = document.createElement('a');
 
     barWebsite.setAttribute('href', randomBar.website_url)
-    barName.textContent = randomBar.name;
-    barStreet.textContent = randomBar.street;
+    barName.textContent = ("Name: " + randomBar.name);
+    barStreet.textContent = ("Street: " + randomBar.street);
+    barWebsite.textContent = ('WebSite')
 
     container.appendChild(barName);
     container.appendChild(barStreet);
