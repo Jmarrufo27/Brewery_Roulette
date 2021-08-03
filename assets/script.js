@@ -9,6 +9,7 @@ var validBars = []
 
 //Function Generate Map with variable "center" that will be the longitude and latitiude coordinates, [lng, lat]
 function generateMap(center){
+    console.log("center", center);
   mapboxgl.accessToken = 'pk.eyJ1IjoidHJpaWloYXVzIiwiYSI6ImNrcm9ja2s5aTZmM3AydnBkaXVwank3cHAifQ.7lG7dllcNDPKoe99U3hBDg';
   var map = new mapboxgl.Map({
     container: 'map', // container id
@@ -47,7 +48,9 @@ function getApi(citySearch, type) {
     //calls function generate map and feeds in the argument center 
     generateMap(center);
 
-
+    //close the modalpopup 
+      document.querySelector(".reveal-overlay").style.display = "none";
+      //console.log("trying to close ....");
 
 }) .catch(function (error){
     console.log(error)
@@ -61,6 +64,9 @@ function handleButton (event) {
     
 
 }
+// function clearDisplayedInfo() {
+//     var randomBar = validBars[]
+// }
 
 function randomValidBarPickAndDisplay() {
 
@@ -85,7 +91,11 @@ function randomValidBarPickAndDisplay() {
 submitButton.addEventListener('click', handleButton, 'hide')
 rouletteBtn.addEventListener('click', randomValidBarPickAndDisplay)
 // STILL LEFT TODO!!
-
+// var barInfo = {
+//     name: barName,
+//     website:barWebsite
+// }
+// localStorage.setItem("favBar", JSON.stringify(barInfo))
 //Retrieve Lon and Lat from API and display it on the map as Markers
 //create markers using filtered results with Longtitude and Latitude
 //function to randomly select one of the bar from the result
@@ -94,7 +104,7 @@ rouletteBtn.addEventListener('click', randomValidBarPickAndDisplay)
 //a button in 'display bar' box to save the option in local storage\
 //delete button in the saved box
 //Modal disappear after we click 'submit'
-
+//remove old markers and generate new marker when the roulette button is clicked
 //Run this function when Roulette Button is clicked
 
 

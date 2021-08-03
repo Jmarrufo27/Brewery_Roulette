@@ -1,11 +1,16 @@
+html{
+  overflow: scroll
+}
+
 body {
   z-index: 999;
   background-image: url(https://stonearchbrewpub.com/wp-content/uploads/stonearchphotos-50-768x512.jpg);
   position: relative;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
 }
 /* .bgcover {
   position: relative;
