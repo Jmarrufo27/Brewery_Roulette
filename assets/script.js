@@ -9,10 +9,10 @@ var validBars = []
 
 //Function Generate Map with variable "center" that will be the longitude and latitiude coordinates, [lng, lat]
 function generateMap(center){
-    mapboxgl.accessToken = 'pk.eyJ1IjoidHJpaWloYXVzIiwiYSI6ImNrcm9ja2s5aTZmM3AydnBkaXVwank3cHAifQ.7lG7dllcNDPKoe99U3hBDg';
+  mapboxgl.accessToken = 'pk.eyJ1IjoidHJpaWloYXVzIiwiYSI6ImNrcm9ja2s5aTZmM3AydnBkaXVwank3cHAifQ.7lG7dllcNDPKoe99U3hBDg';
   var map = new mapboxgl.Map({
     container: 'map', // container id
-    style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    style: 'mapbox://styles/triiihaus/ckru777gm29sx18ka0u03lt1z', // style URL
     center: center, // starting position [lng, lat]
     zoom: 9 // starting zoom
   });
@@ -82,7 +82,7 @@ function randomValidBarPickAndDisplay() {
 
 }
 
-submitButton.addEventListener('click', handleButton)
+submitButton.addEventListener('click', handleButton, 'hide')
 rouletteBtn.addEventListener('click', randomValidBarPickAndDisplay)
 // STILL LEFT TODO!!
 
