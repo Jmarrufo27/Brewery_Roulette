@@ -66,31 +66,65 @@ function handleButton (event) {
 
 }
 
+
 function randomValidBarPickAndDisplay() {
 
     var container = document.getElementById('barInfoDisplay')
     var randomBar = validBars[Math.floor(Math.random() * validBars.length)]
+    var title = document.createElement('h2')
     var barName = document.createElement('h5');
     var barStreet = document.createElement('h5');
     var barWebsite = document.createElement('a');
-    var title = document.createElement('h2')
-
+    var savedBarButton = document.createElement('button')
+    var breakLine = document.createElement('br')
+    // var savedBars = {
+    //     faveBar + 
+    // }
      //clear container before appending new information
     container.innerHTML = "";
     
     title.textContent = ('TADAA!')
     barWebsite.setAttribute('href', randomBar.website_url)
-    barName.textContent = ("Name: " + randomBar.name);
-    barStreet.textContent = ("Street: " + randomBar.street);
+    savedBarButton.setAttribute('type', savedBarButton)
+    savedBarButton.classList.add('button')
+    savedBarButton.classList.add('.submit')
+    barName.textContent = ("Name: " + randomBar.name)
+    barStreet.textContent = ("Street: " + randomBar.street)
     barWebsite.textContent = ('WebSite')
 
+    savedBarButton.textContent = ('Save It!')
+
     container.appendChild(title)
-    container.appendChild(barName);
-    container.appendChild(barStreet);
-    container.appendChild(barWebsite);
+    container.appendChild(barName)
+    container.appendChild(barStreet)
+    container.appendChild(barWebsite)
+    container.appendChild(breakLine)
+    container.appendChild(savedBarButton)
+    
+    function savedBar(event) {
+        // console.log('click')
+        // for (let i = 0; i < array.length; i++) {
+        //     const element = array[index];
+            
+        // }
+        localStorage.setItem("favBar" , (barName.innerHTML + " " + barWebsite))
 
+        var savedModal = document.getElementById('exampleModal2')
+        var savedBarName = document.createElement('h5')
+        var savedWebsite = document.createElement('a')
 
+        savedWebsite.setAttribute('href', randomBar.website_url)
+        savedBarName.textContent = ("Name: " + randomBar.name)
+        savedWebsite.textContent = ('WebSite')
+        // localStorage.getItem(savedBarName)
+        savedModal.appendChild(savedBarName)
+        savedModal.appendChild(savedWebsite)
+        
+    }
+    savedBarButton.addEventListener('click', savedBar)
+    
 }
+
 
 submitButton.addEventListener('click', handleButton, 'hide')
 rouletteBtn.addEventListener('click', randomValidBarPickAndDisplay)
