@@ -1,7 +1,8 @@
 //Variables
 var mapKey = 'pk.eyJ1IjoiZmxvdzNyIiwiYSI6ImNrcnJlZzY3azEyY2wybm8xdjM4ZzZ1ZHQifQ.a3bwXqM3S8c6JRvLcXvm2w'
-var submitButton = document.getElementById('submitBtn')
-var citySearchInput = document.getElementById('city')
+var submitButton = document.getElementById('submitBtn');
+var citySearchInput = document.getElementById('city');
+var stateSearchInput = document.getElementById('state');
 var breweryType = document.getElementById('type');
 var rouletteBtn = document.getElementById('rouletteBtn');
 // created valid bars array that will store all the bars with info: street,website,latitude & longitude
@@ -21,13 +22,12 @@ function generateMap(center){
 // this calls generate map function at the start so the map isnt blank when the webpage is loaded
 generateMap([-118, 33.8])
 
-function getApi(citySearch, type) {
+function getApi(citySearch, stateSearch, type) {
     console.log(type);
- var requestUrl = 'https://api.openbrewerydb.org/breweries?by_city=' + citySearch+'&by_type=' +type;   
+ var requestUrl = 'https://api.openbrewerydb.org/breweries?by_city=' + citySearch+'&by_type=' +type+'&by_state=' +stateSearch;  
   fetch(requestUrl)
     .then(function (response) {
-    //   console.log(response);
-    //   console.log(response.json())
+
       return response.json();
   }) .then( function (data){
     console.log(data);
@@ -35,8 +35,8 @@ function getApi(citySearch, type) {
 // this forloop goes through the data and pushes the validbars based on the conditions to the array validBars
     for (let i = 0; i < data.length; i++) {
         const element = data[i];
-        // console.log(element.street);
-        if(element.street !== null && element.website_url !== null && element.longitude !== null && element.latitude !== null){
+        
+        if(element.state !== null && element.city !== null && element.street !== null && element.website_url !== null && element.longitude !== null && element.latitude !== null){
             validBars.push(element);
         }
     }
@@ -60,13 +60,11 @@ function getApi(citySearch, type) {
 
 function handleButton (event) {
     event.preventDefault()
-    getApi(citySearchInput.value, breweryType.value)
+    validBars = [];
+    getApi(citySearchInput.value, stateSearchInput.value, breweryType.value)
     
 
 }
-// function clearDisplayedInfo() {
-//     var randomBar = validBars[]
-// }
 
 function randomValidBarPickAndDisplay() {
 
@@ -75,12 +73,18 @@ function randomValidBarPickAndDisplay() {
     var barName = document.createElement('h5');
     var barStreet = document.createElement('h5');
     var barWebsite = document.createElement('a');
+    var title = document.createElement('h2')
 
+     //clear container before appending new information
+    container.innerHTML = "";
+    
+    title.textContent = ('TADAA!')
     barWebsite.setAttribute('href', randomBar.website_url)
     barName.textContent = ("Name: " + randomBar.name);
     barStreet.textContent = ("Street: " + randomBar.street);
     barWebsite.textContent = ('WebSite')
 
+    container.appendChild(title)
     container.appendChild(barName);
     container.appendChild(barStreet);
     container.appendChild(barWebsite);
@@ -91,21 +95,19 @@ function randomValidBarPickAndDisplay() {
 submitButton.addEventListener('click', handleButton, 'hide')
 rouletteBtn.addEventListener('click', randomValidBarPickAndDisplay)
 // STILL LEFT TODO!!
-// var barInfo = {
-//     name: barName,
-//     website:barWebsite
-// }
+
+
 // localStorage.setItem("favBar", JSON.stringify(barInfo))
 //Retrieve Lon and Lat from API and display it on the map as Markers
 //create markers using filtered results with Longtitude and Latitude
-//function to randomly select one of the bar from the result
-//display the 1 chosen bar
+
+
 //reduce to one marker
-//a button in 'display bar' box to save the option in local storage\
+//a button in 'display bar' box to save the option in local storage
 //delete button in the saved box
-//Modal disappear after we click 'submit'
+
 //remove old markers and generate new marker when the roulette button is clicked
-//Run this function when Roulette Button is clicked
+
 
 
 
