@@ -10,7 +10,7 @@
 * * WHEN the bar populates, the user may either enter their website or "Save" the bar and spin
 * * again. 
 
-[Link to deployed application]
+[Link to deployed application] https://jmarrufo27.github.io/Brewery_Roulette/
 
 ![image](https://user-images.githubusercontent.com/84144642/128243377-33446528-ddfa-4550-b299-9f76bc2d4b1e.png)
 
