@@ -69,7 +69,7 @@ function handleButton (event) {
     
 
 }
-// this function chooses a random bar from 'validBars' and creates elements in the display section to display name street and website 
+// when roulette button is clicked this function chooses a random bar from 'validBars' and creates elements in the display section to display name street and website 
 function randomValidBarPickAndDisplay() {
 
     var container = document.getElementById('barInfoDisplay')
@@ -91,6 +91,8 @@ function randomValidBarPickAndDisplay() {
     savedBarButton.classList.add('.submit')
     barName.textContent = ("Name: " + randomBar.name)
     barStreet.textContent = ("Street: " + randomBar.street)
+    barWebsite.setAttribute('target', "_blank")
+    barWebsite.setAttribute('rel', "noopener-noreferrer")
     barWebsite.textContent = ('WebSite')
 
     savedBarButton.textContent = ('Save It!')
