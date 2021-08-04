@@ -26,7 +26,7 @@ function generateMap(center){
 }
 // this calls generate map function at the start so the map isnt blank when the webpage is loaded
 generateMap([-118, 33.8])
-
+// This Function fetch information from BreweryDB API and returns data in JSON format
 function getApi(citySearch, stateSearch, type) {
     console.log(type);
  var requestUrl = 'https://api.openbrewerydb.org/breweries?by_city=' + citySearch+'&by_type=' +type+'&by_state=' +stateSearch;  
@@ -47,7 +47,7 @@ function getApi(citySearch, stateSearch, type) {
     }
     console.log(validBars);
     console.log(validBars[Math.floor(Math.random() * validBars.length)]);
-    // this variable center takes the longitude and latitude form the first bar in the array valid bars and sets it as the
+    // this variable center takes the longitude and latitude form the first bar in the array 'validBars' and sets it as the
     // center on the map so that the map is in the correct area 
     var center = [validBars[0].longitude, validBars[0].latitude];
     //calls function generate map and feeds in the parameter center to center over the first bar in 'validBars' array
@@ -55,14 +55,13 @@ function getApi(citySearch, stateSearch, type) {
 
     //close the modalpopup 
       document.querySelector(".reveal-overlay").style.display = "none";
-      //console.log("trying to close ....");
-
+    //catch potential error and display message
 }) .catch(function (error){
     console.log(error)
 })
 }
 
-
+// this function clears the array 'validBars' before running getAPI function that will fetch new data and will populate it 
 function handleButton (event) {
     event.preventDefault()
     validBars = [];
@@ -70,7 +69,7 @@ function handleButton (event) {
     
 
 }
-
+// this function chooses a random bar from 'validBars' and creates elements in the display section to display name street and website 
 function randomValidBarPickAndDisplay() {
 
     var container = document.getElementById('barInfoDisplay')
@@ -103,9 +102,8 @@ function randomValidBarPickAndDisplay() {
     container.appendChild(breakLine)
     container.appendChild(savedBarButton)
     
-
+// this function saves information from the display box when the SAVE IT button is clicked into local storage and prints it in YOUR SAVED BARS modal
     function savedBar() {
-        // console.log('click')
         
         savedBars.push(barName.innerHTML)
 
@@ -138,7 +136,6 @@ function randomValidBarPickAndDisplay() {
     savedBarButton.addEventListener('click', savedBar)
     
 }
-
 
 submitButton.addEventListener('click', handleButton, 'hide')
 rouletteBtn.addEventListener('click', randomValidBarPickAndDisplay)
