@@ -1,2 +1,2 @@
-# UCI_CBC_Project1
+# Brewery_Roulette
 Group 5 Project 1
