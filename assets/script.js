@@ -5,12 +5,17 @@ var citySearchInput = document.getElementById('city');
 var stateSearchInput = document.getElementById('state');
 var breweryType = document.getElementById('type');
 var rouletteBtn = document.getElementById('rouletteBtn');
+var barsList = document.getElementById('bars-list');
+var barCount = document.getElementById('bars-count');
+var burgers = document.getElementById('saveBtn')
 // created valid bars array that will store all the bars with info: street,website,latitude & longitude
 var validBars = []
+//where we will locate the saved bars 
+var savedBars = []
 
 //Function Generate Map with variable "center" that will be the longitude and latitiude coordinates, [lng, lat]
 function generateMap(center){
-    console.log("center", center);
+    //console.log("center", center);
   mapboxgl.accessToken = 'pk.eyJ1IjoidHJpaWloYXVzIiwiYSI6ImNrcm9ja2s5aTZmM3AydnBkaXVwank3cHAifQ.7lG7dllcNDPKoe99U3hBDg';
   var map = new mapboxgl.Map({
     container: 'map', // container id
@@ -21,7 +26,7 @@ function generateMap(center){
 }
 // this calls generate map function at the start so the map isnt blank when the webpage is loaded
 generateMap([-118, 33.8])
-
+// This Function fetch information from BreweryDB API and returns data in JSON format
 function getApi(citySearch, stateSearch, type) {
     console.log(type);
  var requestUrl = 'https://api.openbrewerydb.org/breweries?by_city=' + citySearch+'&by_type=' +type+'&by_state=' +stateSearch;  
@@ -42,22 +47,21 @@ function getApi(citySearch, stateSearch, type) {
     }
     console.log(validBars);
     console.log(validBars[Math.floor(Math.random() * validBars.length)]);
-    // this variable center takes the longitude and latitude form the first bar in the array valid bars and sets it as the
+    // this variable center takes the longitude and latitude form the first bar in the array 'validBars' and sets it as the
     // center on the map so that the map is in the correct area 
     var center = [validBars[0].longitude, validBars[0].latitude];
-    //calls function generate map and feeds in the argument center 
+    //calls function generate map and feeds in the parameter center to center over the first bar in 'validBars' array
     generateMap(center);
 
     //close the modalpopup 
       document.querySelector(".reveal-overlay").style.display = "none";
-      //console.log("trying to close ....");
-
+    //catch potential error and display message
 }) .catch(function (error){
     console.log(error)
 })
 }
 
-
+// this function clears the array 'validBars' before running getAPI function that will fetch new data and will populate it 
 function handleButton (event) {
     event.preventDefault()
     validBars = [];
@@ -65,8 +69,7 @@ function handleButton (event) {
     
 
 }
-
-
+// this function chooses a random bar from 'validBars' and creates elements in the display section to display name street and website 
 function randomValidBarPickAndDisplay() {
 
     var container = document.getElementById('barInfoDisplay')
@@ -77,10 +80,8 @@ function randomValidBarPickAndDisplay() {
     var barWebsite = document.createElement('a');
     var savedBarButton = document.createElement('button')
     var breakLine = document.createElement('br')
-    // var savedBars = {
-    //     faveBar + 
-    // }
-     //clear container before appending new information
+    
+    //clear container before appending new information
     container.innerHTML = "";
     
     title.textContent = ('TADAA!')
@@ -101,34 +102,68 @@ function randomValidBarPickAndDisplay() {
     container.appendChild(breakLine)
     container.appendChild(savedBarButton)
     
-    function savedBar(event) {
-        // console.log('click')
-        // for (let i = 0; i < array.length; i++) {
-        //     const element = array[index];
-            
-        // }
-        localStorage.setItem("favBar" , (barName.innerHTML + " " + barWebsite))
+// this function saves information from the display box when the SAVE IT button is clicked into local storage and prints it in YOUR SAVED BARS modal
+    function savedBar() {
+        
+        savedBars.push(barName.innerHTML)
+
+        console.log(savedBars)
+        
+        localStorage.setItem("savedBars" , JSON.stringify(savedBars))
 
         var savedModal = document.getElementById('exampleModal2')
+        var savedBarList = document.createElement('ul')
+        //var savedBarList.classList.add('bars-list')
         var savedBarName = document.createElement('h5')
         var savedWebsite = document.createElement('a')
 
         savedWebsite.setAttribute('href', randomBar.website_url)
         savedBarName.textContent = ("Name: " + randomBar.name)
         savedWebsite.textContent = ('WebSite')
+        
+
+        savedBarList.appendChild(savedBarName)
+        savedBarList.appendChild(savedWebsite)
+        savedModal.appendChild(savedBarList)
+        console.log(savedBarList)
         // localStorage.getItem(savedBarName)
         savedModal.appendChild(savedBarName)
         savedModal.appendChild(savedWebsite)
-        
+
+
     }
+    
     savedBarButton.addEventListener('click', savedBar)
     
 }
 
-
 submitButton.addEventListener('click', handleButton, 'hide')
 rouletteBtn.addEventListener('click', randomValidBarPickAndDisplay)
+
+
+
+
+
+
+
 // STILL LEFT TODO!!
+
+
+// function renderBars() {
+
+//     var dataToPull = localStorage.getItem('savedBars')
+//     console.log("data" + dataToPull);
+
+//     for (let i = 0; i < localStorage.length; i++) {
+//         const element = localStorage[i];
+
+//         element.appendChild(savedBarList);
+
+        
+//     }
+// }
+
+// burgers.addEventListener('click', renderBars)
 
 
 // localStorage.setItem("favBar", JSON.stringify(barInfo))
