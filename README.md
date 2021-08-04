@@ -1,4 +1,4 @@
-* Brewery Roullette (Project 1)
+* Brewery Roulette (Project 1)
 
 * * In this assignment, we were to create an interactive website utilizing two serverside API's.
 
