@@ -120,6 +120,8 @@ function randomValidBarPickAndDisplay() {
         var savedWebsite = document.createElement('a')
 
         savedWebsite.setAttribute('href', randomBar.website_url)
+        savedWebsite.setAttribute('target', '_blank')
+        savedWebsite.setAttribute('rel', "noopener-noreferrer")
         savedBarName.textContent = ("Name: " + randomBar.name)
         savedWebsite.textContent = ('WebSite')
         
